@@ -17,7 +17,7 @@ app.listen(PORT, () => console.log(`Battlesnake Server listening at http://127.0
 function handleIndex(request, response) {
   var battlesnakeInfo = {
     apiversion: '1',
-    author: 'stevemar',
+    author: 'nigel',
     color: '#00ff00',
     head: 'default',
     tail: 'default'
@@ -40,7 +40,7 @@ function handleMove(request, response) {
   const head = gameData.you.head; // example return: { x: 10, y: 1 }
   const neck = gameData.you.body[1];
 
-  var possibleMoves = ['up', 'left', 'down', 'right']
+  var possibleMoves = ['down', 'right', 'up', 'left']
   for (const m of possibleMoves) {
     const coord = moveAsCoord(m, head);
     if (!offBoard(gameData, coord) && !coordEqual(coord, neck)) {
