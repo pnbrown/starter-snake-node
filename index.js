@@ -46,6 +46,7 @@ function handleMove(request, response) {
     if (!offBoard(gameData, coord) && !coordEqual(coord, neck)) {
         console.log('MOVE: ' + m)
         response.status(200).send({move: m})
+        break
     }
   }
 }
